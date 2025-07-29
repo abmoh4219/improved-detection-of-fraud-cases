@@ -8,6 +8,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from imblearn.over_sampling import SMOTE
 import matplotlib.pyplot as plt
 import seaborn as sns
+import shap
 
 # Load merged data from Task 1
 data = pd.read_csv('data/processed/merged_data.csv')
@@ -95,4 +96,20 @@ plt.figure(figsize=(10, 5))
 sns.heatmap(cm_xgb, annot=True, fmt='d', cmap='Blues', cbar=False, xticklabels=['Non-Fraud', 'Fraud'], yticklabels=['Non-Fraud', 'Fraud'])
 plt.title('XGBoost Confusion Matrix')
 plt.savefig('notebooks/images/cm_xgb.png')
+plt.close()
+
+
+
+# SHAP Explainability
+explainer = shap.TreeExplainer(xgb_model)
+shap_values = explainer.shap_values(X_test)
+
+# Summary Plot
+shap.summary_plot(shap_values, X_test, feature_names=X_test.columns, show=False)
+plt.savefig('notebooks/images/shap_summary.png')
+plt.close()
+
+# Force Plot for first test instance
+shap.force_plot(explainer.expected_value, shap_values[0,:], X_test.iloc[0,:], matplotlib=True, show=False)
+plt.savefig('notebooks/images/shap_force.png')
 plt.close()
