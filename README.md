@@ -35,3 +35,13 @@ This repository contains the code and documentation for the 10 Academy Week 8 pr
 
 - **Outcome**:  
   - XGBoost selected as the best model due to its higher F1-score.
+## Task 3: Model Explainability
+
+- **Explainability Method**:  
+  - Used SHAP to interpret the XGBoost model.
+
+- **Key Features Identified**:  
+  - `time_since_signup` and country encodings.
+
+- **Outputs**:  
+  - Generated SHAP Summary Plot and Force Plot, saved in [`notebooks/images/`](notebooks/images/)
