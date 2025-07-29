@@ -24,4 +24,4 @@ This repository contains the code and documentation for the 10 Academy Week 8 pr
   - EDA insights with visualizations.
   - Feature engineering details (time-based features, transaction frequency, geolocation).
   - Class imbalance analysis and proposed SMOTE strategy.
-
+  
