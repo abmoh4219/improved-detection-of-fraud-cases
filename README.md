@@ -24,4 +24,14 @@ This repository contains the code and documentation for the 10 Academy Week 8 pr
   - EDA insights with visualizations.
   - Feature engineering details (time-based features, transaction frequency, geolocation).
   - Class imbalance analysis and proposed SMOTE strategy.
-  
+## Task 2: Model Building and Training
+
+- **Models Trained**:  
+  - Logistic Regression (F1-Score: 0.278)  
+  - XGBoost (F1-Score: 0.597)
+
+- **Evaluation**:  
+  - Precision-Recall curves and confusion matrices generated (see [notebooks/images/](notebooks/images/))
+
+- **Outcome**:  
+  - XGBoost selected as the best model due to its higher F1-score.
